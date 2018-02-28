@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Flot Examples: AJAX</title>
+	<!--[if lte IE 8]><script language="javascript" type="text/javascript" src="/flot/excanvas.min.js"></script><![endif]-->
+	<script language="javascript" type="text/javascript" src="/flot/jquery.js"></script>
+	<script language="javascript" type="text/javascript" src="/flot/jquery.flot.js"></script>
+	<script language="javascript" type="text/javascript" src="/flot/jquery.flot.time.js"></script>
+	<script language="javascript" type="text/javascript" src="/flot/jquery.flot.tooltip.js"></script>
+	<script type="text/javascript">
+
+	    function fetchData() {
+        // alert("1");
+        fetchData1();
+        fetchData2();
+        fetchData3();
+        fetchData4();
+        fetchData5();
+        fetchData6();
+	    }
+
+	    function fetchData1() {
+	        // alert("2");
+	        $.ajax({
+	            url: "/DataLayer.aspx?HardwareID=818624&Field=TurbFreq" + document.getElementById('txtJob').value,
+	            method: "GET",
+	            dataType: "json",
+	            success: function (series) {
+	                var data = [series];
+	                var options = {
+	                    lines: {
+	                        show: true
+	                    },
+	                    tooltip: true,
+	                    tooltipOpts: {
+	                        content: "<div style='background-color:White'>%y.2</div>",
+	                        // xDateFormat: "%y-%0m-%0d %H:%M:%S",
+	                        shifts: {
+	                            x: 10,
+	                            y: 20
+	                        },
+	                        defaultTheme: false
+	                    },
+	                    points: {
+	                        show: true
+	                    },
+	                    xaxis: { mode: "time" },
+
+	                    grid: {
+	                        // backgroundColor: { colors: ["#fff", "#fff"] },
+	                        hoverable: true //IMPORTANT! this is needed for tooltip to work
+	                    }
+	                };
+	                $.plot($("#placeholder1"), data, options);
+	            }
+	        });
+
+	    }
+
+	    function fetchData2() {
+	        // alert("2");
+	        $.ajax({
+	            url: "/DataLayer.aspx?HardwareID=818624&Field=TurbinePeakFreq" + document.getElementById('txtJob').value,
+	            method: "GET",
+	            dataType: "json",
+	            success: function (series) {
+	                var data = [series];
+	                var options = {
+	                    lines: {
+	                        show: true
+	                    },
+	                    tooltip: true,
+	                    tooltipOpts: {
+	                        content: "<div style='background-color:White'>%y.2</div>",
+	                        // xDateFormat: "%y-%0m-%0d %H:%M:%S",
+	                        shifts: {
+	                            x: 10,
+	                            y: 20
+	                        },
+	                        defaultTheme: false
+	                    },
+	                    points: {
+	                        show: true
+	                    },
+	                    xaxis: { mode: "time" },
+
+	                    grid: {
+	                        // backgroundColor: { colors: ["#fff", "#fff"] },
+	                        hoverable: true //IMPORTANT! this is needed for tooltip to work
+	                    }
+	                };
+	                $.plot($("#placeholder2"), data, options);
+	            }
+	        });
+
+	    }
+
+	    function fetchData3() {
+	        // alert("2");
+	        $.ajax({
+	            url: "/DataLayer.aspx?HardwareID=818624&Field=TurbDC" + document.getElementById('txtJob').value,
+	            method: "GET",
+	            dataType: "json",
+	            success: function (series) {
+	                var data = [series];
+	                var options = {
+	                    lines: {
+	                        show: true
+	                    },
+	                    tooltip: true,
+	                    tooltipOpts: {
+	                        content: "<div style='background-color:White'>%y.2</div>",
+	                        // xDateFormat: "%y-%0m-%0d %H:%M:%S",
+	                        shifts: {
+	                            x: 10,
+	                            y: 20
+	                        },
+	                        defaultTheme: false
+	                    },
+	                    points: {
+	                        show: true
+	                    },
+	                    xaxis: { mode: "time" },
+
+	                    grid: {
+	                        // backgroundColor: { colors: ["#fff", "#fff"] },
+	                        hoverable: true //IMPORTANT! this is needed for tooltip to work
+	                    }
+	                };
+	                $.plot($("#placeholder3"), data, options);
+	            }
+	        });
+
+	    }
+
+	    function fetchData4() {
+	        // alert("2");
+	        $.ajax({
+	            url: "/DataLayer.aspx?HardwareID=818624&Field=IGBT" + document.getElementById('txtJob').value,
+	            method: "GET",
+	            dataType: "json",
+	            success: function (series) {
+	                var data = [series];
+	                var options = {
+	                    lines: {
+	                        show: true
+	                    },
+	                    tooltip: true,
+	                    tooltipOpts: {
+	                        content: "<div style='background-color:White'>%y.2</div>",
+	                        // xDateFormat: "%y-%0m-%0d %H:%M:%S",
+	                        shifts: {
+	                            x: 10,
+	                            y: 20
+	                        },
+	                        defaultTheme: false
+	                    },
+	                    points: {
+	                        show: true
+	                    },
+	                    xaxis: { mode: "time" },
+
+	                    grid: {
+	                        // backgroundColor: { colors: ["#fff", "#fff"] },
+	                        hoverable: true //IMPORTANT! this is needed for tooltip to work
+	                    }
+	                };
+	                $.plot($("#placeholder4"), data, options);
+	            }
+	        });
+
+	    }
+
+	    function fetchData5() {
+	        // alert("2");
+	        $.ajax({
+	            url: "/DataLayer.aspx?HardwareID=818624&Field=AvgWindSpeed" + document.getElementById('txtJob').value,
+	            method: "GET",
+	            dataType: "json",
+	            success: function (series) {
+	                var data = [series];
+	                var options = {
+	                    lines: {
+	                        show: true
+	                    },
+	                    tooltip: true,
+	                    tooltipOpts: {
+	                        content: "<div style='background-color:White'>%y.2</div>",
+	                        // xDateFormat: "%y-%0m-%0d %H:%M:%S",
+	                        shifts: {
+	                            x: 10,
+	                            y: 20
+	                        },
+	                        defaultTheme: false
+	                    },
+	                    points: {
+	                        show: true
+	                    },
+	                    xaxis: { mode: "time" },
+
+	                    grid: {
+	                        // backgroundColor: { colors: ["#fff", "#fff"] },
+	                        hoverable: true //IMPORTANT! this is needed for tooltip to work
+	                    }
+	                };
+	                $.plot($("#placeholder5"), data, options);
+	            }
+	        });
+
+	    }
+
+	    function fetchData6() {
+	            // alert("3");
+	            $.ajax({
+	                url: "/DataLayer.aspx?HardwareID=818624&Field=PeakWind" + document.getElementById('txtJob').value,
+	                method: "GET",
+	                dataType: "json",
+	                success: function (series) {
+	                    var data = [series];
+	                    var options = {
+	                        lines: {
+	                            show: true
+	                        },
+	                        tooltip: true,
+	                        tooltipOpts: {
+	                            content: "<div style='background-color:White'>%y.2</div>",
+	                            // xDateFormat: "%y-%0m-%0d %H:%M:%S",
+	                            shifts: {
+	                                x: 10,
+	                                y: 20
+	                            },
+	                            defaultTheme: false
+	                        },
+	                        points: {
+	                            show: true
+	                        },
+	                        xaxis: { mode: "time" },
+
+	                        grid: {
+	                            // backgroundColor: { colors: ["#fff", "#fff"] },
+	                            hoverable: true //IMPORTANT! this is needed for tooltip to work
+	                        }
+	                    };
+	                    $.plot($("#placeholder6"), data, options);
+	                }
+	            });
+
+	            // setTimeout(fetchData, 1500);
+	    }
+
+	</script>
+</head>
+<body onload="fetchData()">
+
+	<div id="header">
+		<h2>AJAX</h2>
+	</div>
+
+	<div id="content">
+
+		<div class="demo-container">
+			<div id="placeholder1" style="width:900px; height: 300px; display: table-cell; margin:10px"></div><br />
+            <div id="placeholder2" style="width:900px; height: 300px; display: table-cell; margin:10px"></div><br />
+            <div id="placeholder3" style="width:900px; height: 300px; display: table-cell; margin:10px"></div><br />
+            <div id="placeholder4" style="width:900px; height: 300px; display: table-cell; margin:10px"></div><br />
+            <div id="placeholder5" style="width:900px; height: 300px; display: table-cell; margin:10px"></div><br />
+            <div id="placeholder6" style="width:900px; height: 300px; display: table-cell; margin:10px"></div><br />
+		</div>
+
+		<p>Example of loading data dynamically with AJAX. Percentage change in GDP (source: <a href="http://epp.eurostat.ec.europa.eu/tgm/table.do?tab=table&init=1&plugin=1&language=en&pcode=tsieb020">Eurostat</a>). Click the buttons below:</p>
+
+		<p>The data is fetched over HTTP, in this case directly from text files. Usually the URL would point to some web server handler (e.g. a PHP page or Java/.NET/Python/Ruby on Rails handler) that extracts it from a database and serializes it to JSON.</p>
+        
+		<p>
+			<button class="fetchSeries">First dataset</button>
+			[ <a href="/DataLayer.aspx?HardwareID=818624&Start=2013-03-20%2000:00:00&End=2013-03-20%2001:00:00&Field=BattVolt">see data</a> ]
+			<span></span>
+		</p>
+        <input type="hidden" ID="txtJob" value="&Start=2013-03-20%2000:00:00&End=2013-03-20%2001:00:00">
+		<p>
+			<button class="fetchSeries">Second dataset</button>
+			[ <a href="/DataLayer.aspx?HardwareID=818624&Start=2013-03-20%2000:00:00&End=2013-03-20%2001:00:00&Field=BattVolt">see data</a> ]
+			<span></span>
+		</p>
+
+		<p>
+			<button class="fetchSeries">Third dataset</button>
+			[ <a href="/DataLayer.aspx?HardwareID=818624&Start=2013-03-20%2000:00:00&End=2013-03-20%2001:00:00&Field=BattVolt">see data</a> ]
+			<span></span>
+		</p>
+
+		<p>If you combine AJAX with setTimeout, you can poll the server for new data.</p>
+
+		<p>
+			<button class="dataUpdate">Poll for data</button>
+		</p>
+
+	</div>
+
+	<div id="footer">
+		Copyright &copy; 2007 - 2013 IOLA and Ole Laursen
+	</div>
+
+</body>
+</html>

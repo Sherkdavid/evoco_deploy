@@ -1,0 +1,114 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Evoco.master.vb" Inherits="Evoco.Evoco" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Evoco Energy Wind Turbines</title>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+<meta name="description" content="Evoco Energy offer a range of small wind turbines with unrivalled efficiency, market leading returns, supreme build quality and a robust, contemporary design, all backed by a 5 year warranty." />
+<meta name="keywords" content="Small Wind Turbines, Wind Energy, Evoco, Wind, Energy, Sustainable, Sustainability, Turbines, Airsurfer" />
+<meta name="robots" content="index, follow" />
+<meta name="google-site-verification" content="gQmcM9mYWFsqPFXlA3yeytz5lfXjjj7BiOC9iiHhdEA" />
+<meta name="classification" content="Wind Turbine Energy Producers" />
+<meta name="author" content="www.evocoenergy.co.uk" />
+<meta name="copyright" content="Evoco Energy" />
+<meta name="revisit-after" content="15 Days" />	
+	<link href="/Styles/Site.css" rel="stylesheet" type="text/css" />
+	<!--<link href="http://www.evocoenergy.co.uk/public_html/stylesheets/front/global.css" rel="stylesheet" type="text/css" />-->
+
+</head>
+<body><form runat="server">
+<div id="main">
+  <div class="main-inner">
+    <div class="top-line"><img src="http://www.evocoenergy.co.uk/public_html/images/top-line.gif" alt="" /></div>
+	<div class="top-part">
+  <div class="logo"><a href="http://www.evocoenergy.co.uk/"><img src="http://www.evocoenergy.co.uk/public_html/images/logo.gif" alt="" title="logo" /></a></div>
+  <div class="emial-number">
+
+                    <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
+                    <AnonymousTemplate>
+                        [ <a href="/Account/Login.aspx" ID="HeadLoginStatus" runat="server">Log In</a> ]
+                    </AnonymousTemplate>
+                    <LoggedInTemplate>
+                        Welcome <span class="bold"><asp:LoginName ID="HeadLoginName" runat="server" /></span>!
+                        [ <asp:LoginStatus ID="HeadLoginStatus" runat="server" LogoutAction="Redirect" 
+                            LogoutText="Log Out" LogoutPageUrl="/"/> ]
+                    </LoggedInTemplate>
+                </asp:LoginView>
+  </div>
+  <div style="clear:both;"></div>
+</div>	<div class="menu">
+     <asp:Menu ID="NavigationMenu" runat="server" CssClass="menu" EnableViewState="false" IncludeStyleBlock="false" Orientation="Horizontal">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="/Default.aspx" Text="Home"/>
+                                              <asp:MenuItem NavigateUrl="/Hardware.aspx" Text="Hardware Overview" 
+                            Value="Hardware Overview"></asp:MenuItem>
+                        <asp:MenuItem Selectable="False" Text="Admin" Value="Admin">
+                            <asp:MenuItem NavigateUrl="/Admin/Users.aspx" Text="Users" Value="Users">
+                            </asp:MenuItem>
+                            <asp:MenuItem NavigateUrl="/Admin/Hardware.aspx" Text="Turbines" 
+                                Value="Turbines"></asp:MenuItem>
+                        </asp:MenuItem>
+                    </Items>
+                </asp:Menu>
+      
+    </div>	 <div >
+	<script>
+	    function show_this(val) {
+	        var total = 8;
+	        var block = val;
+	        $("#desc" + block).slideToggle("slow", function () {
+	            if ($("#desc" + block).css("display") == "none") {
+	                $("#view" + block).html("View");
+	            } else {
+	                $("#view" + block).html("Hide");
+	            }
+	        });
+	        for (var i = 1; i <= total; i++) {
+	            if (i != block) {
+	                $("#desc" + i).slideUp("slow");
+	            }
+	        }
+	    }	
+</script>
+
+<div class="inner-header">Turbine Management</div>
+<div class="body-inner-part">
+<!--<h1><span>Faq's</span></h1>-->
+ 
+            <asp:ContentPlaceHolder ID="MainContent" runat="server"/></div>
+
+                        <div class="clear">
+                        </div>
+
+                </div>
+                <div class="footer">
+                    <p>
+                        <a href="https://plus.google.com/" target="_blank">
+                            <img onmouseout="this.src='http://www.evocoenergy.co.uk/public_html/images/gmail.png'"
+                                onmouseover="this.src='http://www.evocoenergy.co.uk/public_html/images/gmail-hover.png'"
+                                src="http://www.evocoenergy.co.uk/public_html/images/gmail.png" alt="" /></a><a href="https://twitter.com/evocoenergy"
+                                    target="_blank"><img onmouseout="this.src='http://www.evocoenergy.co.uk/public_html/images/fot-twi.png'"
+                                        onmouseover="this.src='http://www.evocoenergy.co.uk/public_html/images/fot-twi-hover.png'"
+                                        src="http://www.evocoenergy.co.uk/public_html/images/fot-twi.png" alt="" /></a></p>
+                    <div class="footer-link">
+                        <span><a href="http://www.evocoenergy.co.uk/">Home</a> | <a href="http://www.evocoenergy.co.uk/aboutus.php">
+                            About evoco</a> | <a href="http://www.evocoenergy.co.uk/Evocoturbine.php">Our 10kw turbine</a>
+                            | <a href="http://www.evocoenergy.co.uk/evocoblog">Latest News </a>|
+                            <!--<a href="http://www.evocoenergy.co.uk/">Case studies</a>  | 
+             <a href="http://www.evocoenergy.co.uk/">Owners' area</a>  | -->
+                            <a href="http://www.evocoenergy.co.uk/contactus.php">Contact us</a> </span>
+                        <br />
+                        <!--Copyright 2013 - <a href="#" class="active">Evoco.com</a>. All rights are reserved.--->
+                        Designed &amp; Powered by <a href="http://MyWebDesigner.com" target="blank">MyWebDesigner.com</a>
+                        | Copyright 2013 - <a href="#">PRIVACY POLICY</a> | <a href="#">TERMS OF USE</a></div>
+                </div>
+                <div style="clear: both;">
+                </div>
+            </div>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
